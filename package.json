@@ -1,0 +1,37 @@
+{
+  "name": "ok-selector",
+  "version": "1.0.0",
+  "description": "Pluck values from an object using selector strings. With ImmutableJS support",
+  "main": "lib/ok-selector.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register -c -S -R progress **/*spec*.js",
+    "dist": "babel src --out-dir lib --sourceMaps inline --comments --copy-files"
+  },
+  "files": [
+    "package.json",
+    "lib/",
+    "README.md"
+  ],
+  "keywords": [
+    "ok",
+    "selector",
+    "native",
+    "object",
+    "immutablejs",
+    "immutable",
+    "dot",
+    "string"
+  ],
+  "author": "Ryan Boucher",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1"
+  }
+}

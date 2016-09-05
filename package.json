@@ -5,6 +5,7 @@
   "main": "lib/ok-selector.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register -c -S -R progress **/*spec*.js",
+    "predist": "rm -rf lib",
     "dist": "babel src --out-dir lib --sourceMaps inline --comments --copy-files"
   },
   "files": [

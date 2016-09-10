@@ -92,3 +92,10 @@ it('should support plucking all values from an array', () => {
   expect(read(state, 'array*.value').toJS()).to.deep.equal([2, 4, 6, 8]);
 });
 ```
+
+# Unwrapping
+
+`read` always returns an object of based on the underlying implementation. Sometimes this is not what you want. `unwrap` will convert the response of read to a native object. For immutable objects it'll call `toJS`. Depending on the size and complexity of your state tree this can be relatively expensive.
+
+
+

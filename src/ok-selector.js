@@ -104,3 +104,8 @@ readFromImmutable = (node, key) => {
 export default function read (node, key) {
   return isImmutable(node) ? readFromImmutable(node, key) : readFromJSON(node, key);
 }
+
+export const unwrap = (node, key) => {
+  const value = read(node, key);
+  return isImmutable(value) ? value.toJS() : value;
+}

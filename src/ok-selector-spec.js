@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import Immutable from 'immutable';
-import read from './ok-selector';
+import read, { unwrap} from './ok-selector';
 
 describe('ok-selector', () => {
   context('native objects', () => {
@@ -39,6 +39,10 @@ describe('ok-selector', () => {
     it('should support plucking all values from an array', () => {
       expect(read(state, 'array*.value')).to.deep.equal([2, 4, 6, 8]);
     });
+
+    it('should support unwrapping', () => {
+      expect(unwrap(state, 'array*.value')).to.deep.equal([2, 4, 6, 8]);
+    })
   });
 
   context('Immutable objects', () => {
@@ -77,5 +81,9 @@ describe('ok-selector', () => {
     it('should support plucking all values from an array', () => {
       expect(read(state, 'array*.value').toJS()).to.deep.equal([2, 4, 6, 8]);
     });
+
+    it('should support unwrapping', () => {
+      expect(unwrap(state, 'array*.value')).to.deep.equal([2, 4, 6, 8]);
+    })
   })
 })

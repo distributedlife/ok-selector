@@ -2,15 +2,15 @@
   "name": "ok-selector",
   "version": "1.0.0",
   "description": "Pluck values from an object using selector strings. With ImmutableJS support",
-  "main": "lib/ok-selector.js",
+  "main": "dist/ok-selector.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register -c -S -R progress **/*spec*.js",
-    "predist": "rm -rf lib",
-    "dist": "babel src --out-dir lib --sourceMaps inline --comments --copy-files"
+    "predist": "rm -rf dist",
+    "dist": "babel src --out-dir dist --sourceMaps inline --comments --copy-files --ignore **/*spec.js"
   },
   "files": [
     "package.json",
-    "lib/",
+    "dist/",
     "README.md"
   ],
   "keywords": [

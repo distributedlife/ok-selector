@@ -81,17 +81,4 @@ describe('ok-selector', () => {
       expect(has(state, 'array22:3.value')).to.equal(false);
     });
   });
-
-  describe('unwrap', () => {
-    it('should support unwrapping', () => {
-      expect(unwrap(state, 'array*.value')).to.deep.equal([2, 4, 6, 8]);
-    })
-
-    it('should support unwrapping incorrect arrays', () => {
-      expect(unwrap(state, 'array22*.value')).to.deep.equal(undefined);
-      expect(unwrap(state, 'array*.value22')).to.deep.equal(
-        [undefined, undefined, undefined, undefined]
-      );
-    })
-  });
 });

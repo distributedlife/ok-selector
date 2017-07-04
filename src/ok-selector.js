@@ -89,6 +89,5 @@ read = (node, key) => {
 };
 
 export const has = (node, key) => read(node, key) !== undefined;
-export const unwrap = (node, key) => read(node, key);
 
 export default read;
